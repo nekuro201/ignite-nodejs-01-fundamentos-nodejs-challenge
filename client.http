@@ -1,3 +1,12 @@
 ### Get tasks
 
 GET http://localhost:3333/tasks
+
+### Add task
+
+POST http://localhost:3333/tasks
+
+{
+  "title": "exemple",
+  "description": "description exemple"
+}
