@@ -1,12 +1,16 @@
-### Get tasks
+### Get all tasks
 
 GET http://localhost:3333/tasks
+
+### Get tasks - find
+
+GET http://localhost:3333/tasks/description
 
 ### Add task
 
 POST http://localhost:3333/tasks
 
 {
-  "title": "exemple",
-  "description": "description exemple"
+  "title": "first task",
+  "description": "hello world description"
 }

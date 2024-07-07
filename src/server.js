@@ -1,7 +1,6 @@
 import http from 'node:http'
 import { json } from './middlewares/json.js'
-
-const tasks = []
+import { routes } from './routes.js'
 
 const server = http.createServer(async(req, res) => {
 
@@ -9,29 +8,18 @@ const server = http.createServer(async(req, res) => {
 
   await json(req, res)
 
-  if(method === 'GET' && url === '/tasks') {
-    return res
-      .end(JSON.stringify(tasks))
+  const route = routes.find(route => {
+    return route.method === method && route.path.test(url)
+  })
+
+  if(route) {
+    const routeParams = req.url.match(route.path)
+    req.params = { ...routeParams.groups }
+
+    return route.handle(req, res)
   }
 
-  if(method === 'POST' && url === '/tasks') {
-    const { title, description } = req.body
-
-    const newTask = {
-      id: '2',
-      title: title,
-      description: description,
-      completed_at: null,
-      create_at: new Date(),
-      updated_at: new Date(),
-    }
-
-    tasks.push(newTask)
-
-    return res.writeHead(201).end()
-  }
-
-  return res.writeHead(404).end('route not founded!')
+  return res.writeHead(404).end()
 })
 
 server.listen(3333)
