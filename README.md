@@ -15,7 +15,8 @@ API to perform CRUD of your tasks (tasks).
 **Clone the project and access the folder**
 
 ```bash
-$ git clone [https://github.com/nekuro201/cblolmobile.git](https://github.com/nekuro201/ignite-nodejs-01-fundamentos-nodejs-challenge.git) && cd ignite-nodejs-01-fundamentos-nodejs-challenge
+$ git clone https://github.com/nekuro201/ignite-nodejs-01-fundamentos-nodejs-challenge.git
+$ cd ignite-nodejs-01-fundamentos-nodejs-challenge
 ```
 
 **Follow the steps below**
