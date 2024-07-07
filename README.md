@@ -29,7 +29,7 @@ $ npm install
 $ npm run dev
 ```
 
-**Use the plugin of vscode [[REST Client]](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to test routes**
+**Use the plugin of vscode [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to test routes**
 
 ---
 <blockquote>
